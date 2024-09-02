@@ -1,3 +1,8 @@
+
+#use "topfind";;
+#require "base";;
+#require "stdio";;
+(* 如果在 toplevel 运行则需要添加上面的内容, 如用 dune 运行则不需要添加上面的内容 *)
 open Base
 open Stdio
 
@@ -139,3 +144,12 @@ let () =
          sort_hands ~scoring_fun:score_with_joker ~ctoi:card_to_int_with_joker hand1 hand2)
   |> List.mapi ~f:(fun i hand -> earning hand (i + 1))
   |> List.fold ~init:0 ~f:( + ) |> printf "pt2: %d\n"
+
+
+
+(* 
+
+pt1: 248559379
+pt2: 249631254
+
+*)

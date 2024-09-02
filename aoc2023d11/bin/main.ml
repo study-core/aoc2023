@@ -1,5 +1,11 @@
+#use "topfind";;
+#require "base";;
+#require "stdio";;
+#require "ppx_sexp_conv";;
+(* 如果在 toplevel 运行则需要添加上面的内容, 如用 dune 运行则不需要添加上面的内容 *)
 open Base
 open Stdio
+
 
 type ob = Galaxy | Space [@@deriving sexp]
 type starmap = ob array array [@@deriving sexp]
@@ -167,3 +173,12 @@ let () =
   dist2
   |> List.fold ~init:0 ~f:(fun acc (_, _, dist) -> acc + dist)
   |> printf "pt2: %d\n"
+
+
+(* 
+
+...
+pt1: 9623138
+pt2: 726820169514
+
+*)

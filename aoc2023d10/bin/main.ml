@@ -1,3 +1,9 @@
+#use "topfind";;
+#require "base";;
+#require "stdio";;
+#require "ppx_sexp_conv";;
+(* 如果在 toplevel 运行则需要添加上面的内容, 如用 dune 运行则不需要添加上面的内容 *)
+
 open Base
 open Stdio
 
@@ -308,3 +314,11 @@ let () =
   flooded_inside |> List.concat |> dedup_coords |> drop_wall
   |> List.length
   |> printf "total number of flooded: %d\n"
+
+
+(* 
+
+...
+total number of flooded: 353
+
+*)

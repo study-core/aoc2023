@@ -1,3 +1,10 @@
+#use "topfind";;
+#require "base";;
+#require "stdio";;
+#require "ppx_sexp_conv";;
+(* # require "sexplib";;
+open Sexplib;; *)
+(* 如果在 toplevel 运行则需要添加上面的内容, 如用 dune 运行则不需要添加上面的内容 *)
 open Base
 open Stdio
 
@@ -83,3 +90,12 @@ let () =
   starting_nodes
   |> List.map ~f:(fun n -> walk 0 steps ~curr:n ~check:end_with_z)
   |> List.fold ~init:1 ~f:lcm |> printf "pt: %d\n"
+
+
+(* 
+
+...
+pt1: 14893
+pt: 10241191004509
+
+*)

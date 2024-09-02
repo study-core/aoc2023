@@ -1,3 +1,7 @@
+#use "topfind";;
+#require "base";;
+#require "stdio";;
+(* 如果在 toplevel 运行则需要添加上面的内容, 如用 dune 运行则不需要添加上面的内容 *)
 open Base
 open Stdio
 
@@ -67,3 +71,11 @@ let () =
   data
   |> List.map ~f:build_backfill_and_extract
   |> List.fold ~init:0 ~f:( + ) |> printf "pt2: %d\n"
+
+
+(* 
+
+pt1: 1798691765
+pt2: 1104
+
+*)

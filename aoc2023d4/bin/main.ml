@@ -1,3 +1,10 @@
+
+#use "topfind";;
+#thread;;
+#require "base";;
+#require "core";;
+#require "stdio";;
+(* 如果在 toplevel 运行则需要添加上面的内容, 如用 dune 运行则不需要添加上面的内容 *)
 open Base
 open Core
 open Stdio
@@ -77,3 +84,11 @@ let () =
   data |> List.map ~f:parse_line
   |> count 0 (Map.empty (module Int))
   |> printf "pt 2: %d\n"
+
+
+(* 
+
+pt 1: 25004
+pt 2: 14427616
+
+*)

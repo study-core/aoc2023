@@ -1,3 +1,7 @@
+#use "topfind";;
+#require "base";;
+#require "stdio";;
+(* 如果在 toplevel 运行则需要添加上面的内容, 如用 dune 运行则不需要添加上面的内容 *)
 open Base
 open Stdio
 
@@ -72,10 +76,10 @@ let () =
   |> List.filter ~f:(fun game ->
          max_count_for_each_color_in game |> counts_are_possible)
   |> List.map ~f:(fun game -> game.game_number)
-  |> List.fold ~init:0 ~f:( + ) |> printf "%d\n";
+  |> List.fold ~init:0 ~f:( + ) |> printf "%d\n";   (* 2169 *)
   (* pt 2 *)
   let all_lines = read_file_all_lines "data" in
   all_lines |> List.map ~f:extract_game
   |> List.map ~f:max_count_for_each_color_in
   |> List.map ~f:(fun (red, green, blue) -> red * green * blue)
-  |> List.fold ~init:0 ~f:( + ) |> printf "%d\n"
+  |> List.fold ~init:0 ~f:( + ) |> printf "%d\n"    (* 60948 *)

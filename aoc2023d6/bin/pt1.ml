@@ -1,3 +1,7 @@
+#use "topfind";;
+#require "base";;
+#require "stdio";;
+(* 如果在 toplevel 运行则需要添加上面的内容, 如用 dune 运行则不需要添加上面的内容 *)
 open Base
 open Stdio
 
@@ -55,3 +59,11 @@ let () =
       let game_2 = { time = time_2; distance = distance_2 } in
       count_ok_permutation_for_game game_2 |> printf "pt2: %d\n"
   | _ -> failwith "bad data"
+
+
+(* 
+
+pt1: 741000
+pt2: 38220708
+
+*)

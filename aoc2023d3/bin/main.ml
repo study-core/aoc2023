@@ -1,3 +1,7 @@
+#use "topfind";;
+#thread;;
+#require "core";;
+(* 如果在 toplevel 运行则需要添加上面的内容, 如用 dune 运行则不需要添加上面的内容 *)
 (* open Base *)
 open Core
 
@@ -124,3 +128,11 @@ let () =
   in
   all_star_gears |> List.map ~f:gear_ratio |> List.fold ~init:0 ~f:( + )
   |> printf "pt2: %d\n"
+
+
+(* 
+     
+pt1: 556057
+pt2: 82824352
+
+*)
